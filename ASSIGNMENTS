@@ -41,8 +41,99 @@ int main()
 
     return 0;
 } 
---------------------------------------------
-//check whether leap year or not 
+
+-----------------------------------------
+//check whether digit or not
+#include<stdio.h>
+#include<conio.h>
+
+int main()
+{
+	 char ch;
+	 clrscr();
+	 printf("Enter chracter: ");
+	 scanf("%c", &ch);
+	
+	 if(ch>='0' && ch<='9')
+	 {
+	  	printf("%c is DIGIT.", ch);
+	 }
+	 else
+	 {
+	  	printf("%c is NOT DIGIT.", ch);
+	 }
+	
+	 getch();
+	 return(0);
+}
+------------------------------------------
+
+---------------------------------------------
+// p1 - Find sum of the digits in a number
+#include<stdio.h>  
+ int main()    
+{    
+int n,sum=0,m;    
+printf("Enter a number:");    
+scanf("%d",&n);    
+while(n>0)    
+{    
+m=n%10;    
+sum=sum+m;    
+n=n/10;    
+}    
+printf("Sum is=%d",sum);    
+return 0;  
+}   
+---------------------------------------------
+//p2 -Find sum of even digits in a number
+#include<stdio.h>
+
+int main() {
+
+   int n, r, s = 0;
+
+   printf("Enter a number:");
+   scanf("%d", &n);
+
+   while (n > 0) {
+       r = n % 10;
+       if (r % 2 == 0) {
+           s = s + r;
+       }
+       n = n / 10;
+   }
+   printf("Sum of even digits is:%d", s);
+
+   return 0;
+}
+------------------------------------------------
+//p3 - chech whether prime or not
+#include < stdio.h>  
+
+int main()
+{
+    int i, count = 0;
+    int num = 19;
+    
+    // checking number of divisors b/w 1 & num
+    for(i = 1; i <= num; i++) {
+      if(num % i == 0) 
+        count += 1;
+    } 
+     // 0 & 1 are not prime number
+       if(num == 0 || num == 1)
+         printf("%d is not prime", num); 
+     //if number of divisors are > 2 then not prime else prime 
+       else if(count > 2) 
+          printf("%d is not prime", num);
+       else
+         printf("%d is prime", num);
+
+  return 0;
+}
+----------------------------------------------------
+//p4 - check whether leap year or not 
 #include <stdio.h>
 int main() {
    int year;
@@ -70,50 +161,58 @@ int main() {
 
    return 0;
 }
------------------------------------------
-//check whether digit or not
-#include<stdio.h>
-#include<conio.h>
+-----------------------------------------------
+//p5 - Check if an alphabet is small case
+#include <stdio.h>
 
 int main()
 {
-	 char ch;
-	 clrscr();
-	 printf("Enter chracter: ");
-	 scanf("%c", &ch);
-	
-	 if(ch>='0' && ch<='9')
-	 {
-	  	printf("%c is DIGIT.", ch);
-	 }
-	 else
-	 {
-	  	printf("%c is NOT DIGIT.", ch);
-	 }
-	
-	 getch();
-	 return(0);
+  char Ch;
+
+  printf("\n Please Enter any alphabet\n");
+  scanf("%c", &Ch);
+
+  if (Ch >= 'a' && Ch <= 'z')
+   {  
+     printf ( "\nEntered character is lowercase alphabet") ;
+   }
+  else
+   {
+     printf("\nEntered character is Not lowercase alphabet");
+   }  
 }
-------------------------------------------
-//check whether program is perfect square or not 
+----------------------------------------------------
+//p6 - Convert a small case letter to upper case
+
 #include <stdio.h>
-#include <math.h>
+
 int main()
 {
-int num;
-int iVar;
-float fVar;
-printf("Enter an integer number: ");
-scanf("%d",&num);
-fVar=sqrt((double)num);
-iVar=fVar;
-if(iVar==fVar)
-printf("%d is a perfect square.",num);
-else
-printf("%d is not a perfect square.",num);
+char letter;
+printf("Please Enter a Lower Case Letter:");
+scanf("%s", letter);
+
+if (letter >= 'a' && letter <= 'z')
+  letter = letter - 'a' + 'A';
+printf("%s", letter);
 return 0;
 }
----------------------------------------------
 
+---------------------------------------------------------
+//p7 - Convert a upper case letter to small case
+#include <stdio.h>
 
+int main()
+{
+char letter;
+printf("Please Enter a Upper Case Letter:");
+scanf("%s", letter);
+
+if (letter >= 'A' && letter <= 'Z')
+  letter = letter - 'A' + 'a';
+printf("%s", letter);
+return 0;
+}
+---------------------------------------------------
+//p8 - Check if an alphabet is upper case
 
